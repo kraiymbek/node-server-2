@@ -1,7 +1,10 @@
 const express = require('express');
 const hbs = require('hbs');
 
+const port = process.evn.PORT || 3000;
+
 let app = express();
+
 
 
 
@@ -47,8 +50,8 @@ app.get('/bad',(req,res)=>{
     })
 });
 
-app.listen(3000,()=>{
-    console.log('Port is on 3000');
+app.listen(port,()=>{
+    console.log(`Server is up on port ${port} `);
 });
 
 hbs.registerPartials(__dirname + '/views/partials');
